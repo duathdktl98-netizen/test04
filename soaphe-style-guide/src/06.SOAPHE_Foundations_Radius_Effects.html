@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Noto+Serif+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --soaphe-ivory-50: #FAF8F3;
+  --soaphe-ivory-100: #F4F0E8;
+  --soaphe-cream-200: #EAE2D5;
+  --soaphe-beige-300: #D7C7B5;
+  
+  --soaphe-taupe-300: #B5A89B;
+  --soaphe-taupe-500: #8D8074;
+  --soaphe-taupe-700: #63574C;
+  
+  --soaphe-brown-500: #7B685B;
+  --soaphe-brown-700: #51433A;
+  --soaphe-brown-900: #2C2521;
+  
+  --soaphe-olive-100: #E8EADF;
+  --soaphe-olive-500: #777B5D;
+  --soaphe-olive-700: #4E5239;
+  
+  --soaphe-rose-100: #F1E2DF;
+  --soaphe-rose-500: #B77970;
+  --soaphe-rose-700: #844D45;
+  
+  --soaphe-amber-100: #F4E7D3;
+  --soaphe-amber-500: #B8834D;
+  --soaphe-amber-700: #83572A;
+  
+  --soaphe-white-1000: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', -apple-system, sans-serif;
+  background-color: var(--soaphe-ivory-50);
+  color: var(--soaphe-brown-900);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 32px 36px 32px;
+  width: 1152px;
+  min-height: 100px;
+}
+
+.guide-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.guide-header {
+  margin-bottom: 24px;
+}
+
+.guide-title {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--soaphe-brown-900);
+  letter-spacing: -0.4px;
+  margin-bottom: 8px;
+}
+
+.guide-desc {
+  font-size: 14.5px;
+  color: var(--soaphe-taupe-700);
+  line-height: 1.55;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.guide-meta {
+  font-size: 12.5px;
+  color: var(--soaphe-olive-500);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.canvas-board {
+  background: var(--soaphe-ivory-100);
+  border: 1px solid var(--soaphe-cream-200);
+  border-radius: 18px;
+  padding: 32px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--soaphe-taupe-700);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.serif-font {
+  font-family: 'Noto Serif KR', 'Cormorant Garamond', Georgia, serif;
+}
+
+.mono-font {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Texture Placeholder styling */
+.ceramic-texture {
+  background: radial-gradient(circle at 40% 35%, #FFFFFF 0%, #F4F0E8 55%, #EAE2D5 100%);
+  border: 1px solid var(--soaphe-cream-200);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.ceramic-texture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#8D8074 0.75px, transparent 0.75px);
+  background-size: 16px 16px;
+  opacity: 0.08;
+}
+
+.radius-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.radius-box {
+  background: var(--soaphe-white-1000);
+  border: 1px solid var(--soaphe-cream-200);
+  border-radius: 14px;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.radius-demo {
+  width: 56px;
+  height: 56px;
+  background: var(--soaphe-ivory-100);
+  border: 1.5px solid var(--soaphe-taupe-500);
+}
+.shadow-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.shadow-box {
+  background: var(--soaphe-white-1000);
+  border-radius: 16px;
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  border: 1px solid var(--soaphe-cream-200);
+}
+.shadow-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--soaphe-brown-900);
+}
+.shadow-detail {
+  font-size: 12px;
+  color: var(--soaphe-taupe-500);
+  font-family: 'JetBrains Mono', monospace;
+}
+</style>
+</head>
+<body>
+  <div class="guide-page">
+    <div class="guide-header">
+      <div class="guide-title">Radius & Effects</div>
+      <div class="guide-desc">모서리·보더·그림자는 제품의 부드러운 인상을 보조하되, 편집형 레이아웃의 절제된 깊이를 유지하도록 제한적으로 사용합니다.</div>
+      <div class="guide-meta">ORGANIC RADIUS SCALE · AMBIENT SHADOWS · BORDER FIRST PRINCIPLE</div>
+    </div>
+
+    <div class="section-label">Radius scale</div>
+    <div class="radius-grid">
+      <div class="radius-box">
+        <div class="radius-demo" style="border-radius: 0px;"></div>
+        <span style="font-size: 11.5px; font-weight: 600; color: #63574C;">radius/0 · 0px</span>
+      </div>
+      <div class="radius-box">
+        <div class="radius-demo" style="border-radius: 4px;"></div>
+        <span style="font-size: 11.5px; font-weight: 600; color: #63574C;">radius/4 · 4px</span>
+      </div>
+      <div class="radius-box">
+        <div class="radius-demo" style="border-radius: 8px;"></div>
+        <span style="font-size: 11.5px; font-weight: 600; color: #63574C;">radius/8 · 8px</span>
+      </div>
+      <div class="radius-box">
+        <div class="radius-demo" style="border-radius: 12px;"></div>
+        <span style="font-size: 11.5px; font-weight: 600; color: #63574C;">radius/12 · 12px</span>
+      </div>
+      <div class="radius-box">
+        <div class="radius-demo" style="border-radius: 16px;"></div>
+        <span style="font-size: 11.5px; font-weight: 600; color: #63574C;">radius/16 · 16px</span>
+      </div>
+      <div class="radius-box">
+        <div class="radius-demo" style="border-radius: 24px;"></div>
+        <span style="font-size: 11.5px; font-weight: 600; color: #63574C;">radius/24 · 24px</span>
+      </div>
+      <div class="radius-box">
+        <div class="radius-demo" style="border-radius: 9999px;"></div>
+        <span style="font-size: 11.5px; font-weight: 600; color: #63574C;">radius/full · pill</span>
+      </div>
+    </div>
+
+    <div class="section-label">Effect styles</div>
+    <div class="shadow-grid">
+      <div class="shadow-box" style="box-shadow: 0 2px 8px rgba(44, 37, 33, 0.06);">
+        <div class="shadow-name">SOAPHE/Shadow/Subtle</div>
+        <div class="shadow-detail">y 2 · blur 8 · opacity 6%</div>
+      </div>
+      <div class="shadow-box" style="box-shadow: 0 8px 24px rgba(44, 37, 33, 0.10);">
+        <div class="shadow-name">SOAPHE/Shadow/Floating</div>
+        <div class="shadow-detail">y 8 · blur 24 · opacity 10%</div>
+      </div>
+      <div class="shadow-box" style="box-shadow: 0 16px 40px rgba(44, 37, 33, 0.14);">
+        <div class="shadow-name">SOAPHE/Shadow/Overlay</div>
+        <div class="shadow-detail">y 16 · blur 40 · opacity 14%</div>
+      </div>
+    </div>
+    <div style="font-size: 12.5px; color: #8D8074; font-weight: 500; margin-top: 10px;">
+      * Product cards use border and spacing before shadow.
+    </div>
+  </div>
+</body>
+</html>

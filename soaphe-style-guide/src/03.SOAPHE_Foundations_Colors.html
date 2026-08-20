@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Noto+Serif+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --soaphe-ivory-50: #FAF8F3;
+  --soaphe-ivory-100: #F4F0E8;
+  --soaphe-cream-200: #EAE2D5;
+  --soaphe-beige-300: #D7C7B5;
+  
+  --soaphe-taupe-300: #B5A89B;
+  --soaphe-taupe-500: #8D8074;
+  --soaphe-taupe-700: #63574C;
+  
+  --soaphe-brown-500: #7B685B;
+  --soaphe-brown-700: #51433A;
+  --soaphe-brown-900: #2C2521;
+  
+  --soaphe-olive-100: #E8EADF;
+  --soaphe-olive-500: #777B5D;
+  --soaphe-olive-700: #4E5239;
+  
+  --soaphe-rose-100: #F1E2DF;
+  --soaphe-rose-500: #B77970;
+  --soaphe-rose-700: #844D45;
+  
+  --soaphe-amber-100: #F4E7D3;
+  --soaphe-amber-500: #B8834D;
+  --soaphe-amber-700: #83572A;
+  
+  --soaphe-white-1000: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', -apple-system, sans-serif;
+  background-color: var(--soaphe-ivory-50);
+  color: var(--soaphe-brown-900);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 32px 36px 32px;
+  width: 1152px;
+  min-height: 100px;
+}
+
+.guide-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.guide-header {
+  margin-bottom: 24px;
+}
+
+.guide-title {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--soaphe-brown-900);
+  letter-spacing: -0.4px;
+  margin-bottom: 8px;
+}
+
+.guide-desc {
+  font-size: 14.5px;
+  color: var(--soaphe-taupe-700);
+  line-height: 1.55;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.guide-meta {
+  font-size: 12.5px;
+  color: var(--soaphe-olive-500);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.canvas-board {
+  background: var(--soaphe-ivory-100);
+  border: 1px solid var(--soaphe-cream-200);
+  border-radius: 18px;
+  padding: 32px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--soaphe-taupe-700);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.serif-font {
+  font-family: 'Noto Serif KR', 'Cormorant Garamond', Georgia, serif;
+}
+
+.mono-font {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Texture Placeholder styling */
+.ceramic-texture {
+  background: radial-gradient(circle at 40% 35%, #FFFFFF 0%, #F4F0E8 55%, #EAE2D5 100%);
+  border: 1px solid var(--soaphe-cream-200);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.ceramic-texture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#8D8074 0.75px, transparent 0.75px);
+  background-size: 16px 16px;
+  opacity: 0.08;
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  width: 100%;
+}
+.color-swatch {
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 84px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.swatch-name {
+  font-size: 11.5px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.swatch-hex {
+  font-size: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  opacity: 0.9;
+  margin-top: 3px;
+}
+.swatch-token {
+  font-size: 9.5px;
+  font-family: 'JetBrains Mono', monospace;
+  opacity: 0.8;
+  margin-top: 2px;
+}
+.text-dark { color: #2C2521; }
+.text-light { color: #FFFFFF; }
+
+.scent-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+.scent-card {
+  background: var(--soaphe-white-1000);
+  border-radius: 14px;
+  padding: 20px;
+  border: 1px solid var(--soaphe-cream-200);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.scent-badge {
+  display: inline-flex;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  width: fit-content;
+}
+</style>
+</head>
+<body>
+  <div class="guide-page">
+    <div class="guide-header">
+      <div class="guide-title">Colors</div>
+      <div class="guide-desc">Primitives는 소피의 원시 팔레트이고, Semantic Color는 실제 UI 역할을 나타냅니다. 컴포넌트에는 Semantic Color만 사용합니다.</div>
+      <div class="guide-meta">PRIMITIVES 20 TONES · SEMANTIC TOKENS · SCENT ACCENT ACCESSIBILITY</div>
+    </div>
+    
+    <div class="section-label">Primitives · Value</div>
+    <div class="color-grid" style="margin-bottom: 28px;">
+      <!-- Row 1 -->
+      <div class="color-swatch text-dark" style="background: #FFFFFF; border: 1px solid #EAE2D5;">
+        <div class="swatch-name">white/1000</div>
+        <div class="swatch-hex">#FFFFFF</div>
+        <div class="swatch-token">var(--soaphe-white-1000)</div>
+      </div>
+      <div class="color-swatch text-dark" style="background: #FAF8F3; border: 1px solid #EAE2D5;">
+        <div class="swatch-name">ivory/50</div>
+        <div class="swatch-hex">#FAF8F3</div>
+        <div class="swatch-token">var(--soaphe-ivory-50)</div>
+      </div>
+      <div class="color-swatch text-dark" style="background: #F4F0E8; border: 1px solid #EAE2D5;">
+        <div class="swatch-name">ivory/100</div>
+        <div class="swatch-hex">#F4F0E8</div>
+        <div class="swatch-token">var(--soaphe-ivory-100)</div>
+      </div>
+      <div class="color-swatch text-dark" style="background: #EAE2D5;">
+        <div class="swatch-name">cream/200</div>
+        <div class="swatch-hex">#EAE2D5</div>
+        <div class="swatch-token">var(--soaphe-cream-200)</div>
+      </div>
+      <div class="color-swatch text-dark" style="background: #D7C7B5;">
+        <div class="swatch-name">beige/300</div>
+        <div class="swatch-hex">#D7C7B5</div>
+        <div class="swatch-token">var(--soaphe-beige-300)</div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="color-swatch text-dark" style="background: #B5A89B;">
+        <div class="swatch-name">taupe/300</div>
+        <div class="swatch-hex">#B5A89B</div>
+        <div class="swatch-token">var(--soaphe-taupe-300)</div>
+      </div>
+      <div class="color-swatch text-light" style="background: #8D8074;">
+        <div class="swatch-name">taupe/500</div>
+        <div class="swatch-hex">#8D8074</div>
+        <div class="swatch-token">var(--soaphe-taupe-500)</div>
+      </div>
+      <div class="color-swatch text-light" style="background: #63574C;">
+        <div class="swatch-name">taupe/700</div>
+        <div class="swatch-hex">#63574C</div>
+        <div class="swatch-token">var(--soaphe-taupe-700)</div>
+      </div>
+      <div class="color-swatch text-light" style="background: #7B685B;">
+        <div class="swatch-name">brown/500</div>
+        <div class="swatch-hex">#7B685B</div>
+        <div class="swatch-token">var(--soaphe-brown-500)</div>
+      </div>
+      <div class="color-swatch text-light" style="background: #51433A;">
+        <div class="swatch-name">brown/700</div>
+        <div class="swatch-hex">#51433A</div>
+        <div class="swatch-token">var(--soaphe-brown-700)</div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="color-swatch text-light" style="background: #2C2521;">
+        <div class="swatch-name">brown/900</div>
+        <div class="swatch-hex">#2C2521</div>
+        <div class="swatch-token">var(--soaphe-brown-900)</div>
+      </div>
+      <div class="color-swatch text-dark" style="background: #E8EADF;">
+        <div class="swatch-name">olive/100</div>
+        <div class="swatch-hex">#E8EADF</div>
+        <div class="swatch-token">var(--soaphe-olive-100)</div>
+      </div>
+      <div class="color-swatch text-light" style="background: #777B5D;">
+        <div class="swatch-name">olive/500</div>
+        <div class="swatch-hex">#777B5D</div>
+        <div class="swatch-token">var(--soaphe-olive-500)</div>
+      </div>
+      <div class="color-swatch text-light" style="background: #4E5239;">
+        <div class="swatch-name">olive/700</div>
+        <div class="swatch-hex">#4E5239</div>
+        <div class="swatch-token">var(--soaphe-olive-700)</div>
+      </div>
+      <div class="color-swatch text-dark" style="background: #F1E2DF;">
+        <div class="swatch-name">rose/100</div>
+        <div class="swatch-hex">#F1E2DF</div>
+        <div class="swatch-token">var(--soaphe-rose-100)</div>
+      </div>
+
+      <!-- Row 4 -->
+      <div class="color-swatch text-light" style="background: #B77970;">
+        <div class="swatch-name">rose/500</div>
+        <div class="swatch-hex">#B77970</div>
+        <div class="swatch-token">var(--soaphe-rose-500)</div>
+      </div>
+      <div class="color-swatch text-light" style="background: #844D45;">
+        <div class="swatch-name">rose/700</div>
+        <div class="swatch-hex">#844D45</div>
+        <div class="swatch-token">var(--soaphe-rose-700)</div>
+      </div>
+      <div class="color-swatch text-dark" style="background: #F4E7D3;">
+        <div class="swatch-name">amber/100</div>
+        <div class="swatch-hex">#F4E7D3</div>
+        <div class="swatch-token">var(--soaphe-amber-100)</div>
+      </div>
+      <div class="color-swatch text-light" style="background: #B8834D;">
+        <div class="swatch-name">amber/500</div>
+        <div class="swatch-hex">#B8834D</div>
+        <div class="swatch-token">var(--soaphe-amber-500)</div>
+      </div>
+      <div class="color-swatch text-light" style="background: #83572A;">
+        <div class="swatch-name">amber/700</div>
+        <div class="swatch-hex">#83572A</div>
+        <div class="swatch-token">var(--soaphe-amber-700)</div>
+      </div>
+    </div>
+
+    <div class="section-label">Semantic Color · Default</div>
+    <div class="color-grid" style="margin-bottom: 28px;">
+      <div class="color-swatch text-dark" style="background: #FAF8F3; border: 1px solid #EAE2D5;">
+        <div class="swatch-name">color/bg/canvas</div>
+        <div class="swatch-token">var(--soaphe-bg-canvas)</div>
+      </div>
+      <div class="color-swatch text-dark" style="background: #FFFFFF; border: 1px solid #EAE2D5;">
+        <div class="swatch-name">color/bg/surface</div>
+        <div class="swatch-token">var(--soaphe-bg-surface)</div>
+      </div>
+      <div class="color-swatch text-dark" style="background: #F4F0E8; border: 1px solid #EAE2D5;">
+        <div class="swatch-name">color/bg/subtle</div>
+        <div class="swatch-token">var(--soaphe-bg-subtle)</div>
+      </div>
+      <div class="color-swatch text-light" style="background: #2C2521;">
+        <div class="swatch-name">color/bg/inverse</div>
+        <div class="swatch-token">var(--soaphe-bg-inverse)</div>
+      </div>
+      <div class="color-swatch text-light" style="background: #2C2521;">
+        <div class="swatch-name">color/text/primary</div>
+        <div class="swatch-token">var(--soaphe-text-primary)</div>
+      </div>
+
+      <div class="color-swatch text-light" style="background: #63574C;">
+        <div class="swatch-name">color/text/secondary</div>
+        <div class="swatch-token">var(--soaphe-text-secondary)</div>
+      </div>
+      <div class="color-swatch text-light" style="background: #8D8074;">
+        <div class="swatch-name">color/text/muted</div>
+        <div class="swatch-token">var(--soaphe-text-muted)</div>
+      </div>
+      <div class="color-swatch text-dark" style="background: #FAF8F3; border: 1px solid #EAE2D5;">
+        <div class="swatch-name">color/text/inverse</div>
+        <div class="swatch-token">var(--soaphe-text-inverse)</div>
+      </div>
+      <div class="color-swatch text-dark" style="background: #EAE2D5;">
+        <div class="swatch-name">color/border/default</div>
+        <div class="swatch-token">var(--soaphe-border-default)</div>
+      </div>
+      <div class="color-swatch text-light" style="background: #8D8074;">
+        <div class="swatch-name">color/border/strong</div>
+        <div class="swatch-token">var(--soaphe-border-strong)</div>
+      </div>
+
+      <div class="color-swatch text-light" style="background: #51433A;">
+        <div class="swatch-name">color/brand/primary</div>
+        <div class="swatch-token">var(--soaphe-brand-primary)</div>
+      </div>
+      <div class="color-swatch text-light" style="background: #2C2521;">
+        <div class="swatch-name">color/brand/hover</div>
+        <div class="swatch-token">var(--soaphe-brand-hover)</div>
+      </div>
+      <div class="color-swatch text-dark" style="background: #EAE2D5; border: 1px solid #D7C7B5;">
+        <div class="swatch-name">color/bg/selected</div>
+        <div class="swatch-token">var(--soaphe-bg-selected)</div>
+      </div>
+      <div class="color-swatch text-dark" style="background: #F4F0E8; border: 1px solid #EAE2D5;">
+        <div class="swatch-name">color/bg/disabled</div>
+        <div class="swatch-token">var(--soaphe-bg-disabled)</div>
+      </div>
+      <div class="color-swatch text-light" style="background: #B5A89B;">
+        <div class="swatch-name">color/text/disabled</div>
+        <div class="swatch-token">var(--soaphe-text-disabled)</div>
+      </div>
+    </div>
+
+    <div class="section-label">Scent Accent (배지·캡션·배경에 제한적 사용)</div>
+    <div class="scent-grid">
+      <div class="scent-card">
+        <div class="scent-badge" style="background: #E8EADF; color: #4E5239; border: 1px solid #777B5D;">Rest / 휴식</div>
+        <div style="font-size: 13px; color: #51433A; line-height: 1.5;">편백과 샌달우드의 차분한 숲 톤을 담은 <b>Muted Olive</b> 계열</div>
+      </div>
+      <div class="scent-card">
+        <div class="scent-badge" style="background: #F4E7D3; color: #83572A; border: 1px solid #B8834D;">Refresh / 리프레시</div>
+        <div style="font-size: 13px; color: #51433A; line-height: 1.5;">베르가못과 유자의 상쾌한 햇살을 담은 <b>Soft Amber</b> 계열</div>
+      </div>
+      <div class="scent-card">
+        <div class="scent-badge" style="background: #F1E2DF; color: #844D45; border: 1px solid #B77970;">Happiness / 행복</div>
+        <div style="font-size: 13px; color: #51433A; line-height: 1.5;">무화과와 코튼의 포근한 온기를 담은 <b>Dusty Rose</b> 계열</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Noto+Serif+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --soaphe-ivory-50: #FAF8F3;
+  --soaphe-ivory-100: #F4F0E8;
+  --soaphe-cream-200: #EAE2D5;
+  --soaphe-beige-300: #D7C7B5;
+  
+  --soaphe-taupe-300: #B5A89B;
+  --soaphe-taupe-500: #8D8074;
+  --soaphe-taupe-700: #63574C;
+  
+  --soaphe-brown-500: #7B685B;
+  --soaphe-brown-700: #51433A;
+  --soaphe-brown-900: #2C2521;
+  
+  --soaphe-olive-100: #E8EADF;
+  --soaphe-olive-500: #777B5D;
+  --soaphe-olive-700: #4E5239;
+  
+  --soaphe-rose-100: #F1E2DF;
+  --soaphe-rose-500: #B77970;
+  --soaphe-rose-700: #844D45;
+  
+  --soaphe-amber-100: #F4E7D3;
+  --soaphe-amber-500: #B8834D;
+  --soaphe-amber-700: #83572A;
+  
+  --soaphe-white-1000: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', -apple-system, sans-serif;
+  background-color: var(--soaphe-ivory-50);
+  color: var(--soaphe-brown-900);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 32px 36px 32px;
+  width: 1152px;
+  min-height: 100px;
+}
+
+.guide-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.guide-header {
+  margin-bottom: 24px;
+}
+
+.guide-title {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--soaphe-brown-900);
+  letter-spacing: -0.4px;
+  margin-bottom: 8px;
+}
+
+.guide-desc {
+  font-size: 14.5px;
+  color: var(--soaphe-taupe-700);
+  line-height: 1.55;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.guide-meta {
+  font-size: 12.5px;
+  color: var(--soaphe-olive-500);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.canvas-board {
+  background: var(--soaphe-ivory-100);
+  border: 1px solid var(--soaphe-cream-200);
+  border-radius: 18px;
+  padding: 32px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--soaphe-taupe-700);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.serif-font {
+  font-family: 'Noto Serif KR', 'Cormorant Garamond', Georgia, serif;
+}
+
+.mono-font {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Texture Placeholder styling */
+.ceramic-texture {
+  background: radial-gradient(circle at 40% 35%, #FFFFFF 0%, #F4F0E8 55%, #EAE2D5 100%);
+  border: 1px solid var(--soaphe-cream-200);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.ceramic-texture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#8D8074 0.75px, transparent 0.75px);
+  background-size: 16px 16px;
+  opacity: 0.08;
+}
+
+.badge-row {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-weight: 600;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+}
+.badge-sm { height: 26px; padding: 0 14px; font-size: 11.5px; }
+.badge-md { height: 32px; padding: 0 18px; font-size: 13px; }
+
+.badge-neutral { background: #F4F0E8; color: #51433A; border-color: #EAE2D5; }
+.badge-olive { background: #E8EADF; color: #4E5239; border-color: #777B5D; }
+.badge-amber { background: #F4E7D3; color: #83572A; border-color: #B8834D; }
+.badge-rose { background: #F1E2DF; color: #844D45; border-color: #B77970; }
+.badge-outline { background: transparent; color: #2C2521; border-color: #8D8074; }
+</style>
+</head>
+<body>
+  <div class="guide-page">
+    <div class="guide-header">
+      <div class="guide-title">Badge & Tag</div>
+      <div class="guide-desc">향·제품 상태·공간·선물 상황 정보를 짧게 표시합니다. 장식보다 탐색과 비교를 돕는 용도로 사용합니다.</div>
+      <div class="guide-meta">PROPERTY Label / Icon · VARIANTS Size / Type / Tone / State · 짧은 명사형 문구 사용</div>
+    </div>
+
+    <div class="canvas-board">
+      <div class="section-label">Small Size (Scent, Product Status, Space, Gift, Use)</div>
+      <div class="badge-row">
+        <div class="badge badge-sm badge-olive">휴식 (Olive)</div>
+        <div class="badge badge-sm badge-amber">리프레시 (Amber)</div>
+        <div class="badge badge-sm badge-rose">행복 (Rose)</div>
+        <div class="badge badge-sm badge-neutral">New</div>
+        <div class="badge badge-sm badge-neutral">Best</div>
+        <div class="badge badge-sm badge-outline">Sold Out</div>
+        <div class="badge badge-sm badge-neutral">밝은 욕실</div>
+        <div class="badge badge-sm badge-neutral">비누 받침</div>
+        <div class="badge badge-sm badge-amber">집들이 선물</div>
+      </div>
+
+      <div class="section-label" style="margin-top: 14px;">Medium Size (Categorized Explorations)</div>
+      <div class="badge-row">
+        <div class="badge badge-md badge-olive">🌿 휴식 · 편백 숲</div>
+        <div class="badge badge-md badge-amber">🍊 리프레시 · 베르가못</div>
+        <div class="badge badge-md badge-rose">🌸 행복 · 무화과</div>
+        <div class="badge badge-md badge-neutral">FORM S-01 시그니처</div>
+        <div class="badge badge-md badge-outline">오브제 트레이</div>
+        <div class="badge badge-md badge-amber">생일 축하 패키지</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

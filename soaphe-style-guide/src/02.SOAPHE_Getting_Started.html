@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Noto+Serif+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --soaphe-ivory-50: #FAF8F3;
+  --soaphe-ivory-100: #F4F0E8;
+  --soaphe-cream-200: #EAE2D5;
+  --soaphe-beige-300: #D7C7B5;
+  
+  --soaphe-taupe-300: #B5A89B;
+  --soaphe-taupe-500: #8D8074;
+  --soaphe-taupe-700: #63574C;
+  
+  --soaphe-brown-500: #7B685B;
+  --soaphe-brown-700: #51433A;
+  --soaphe-brown-900: #2C2521;
+  
+  --soaphe-olive-100: #E8EADF;
+  --soaphe-olive-500: #777B5D;
+  --soaphe-olive-700: #4E5239;
+  
+  --soaphe-rose-100: #F1E2DF;
+  --soaphe-rose-500: #B77970;
+  --soaphe-rose-700: #844D45;
+  
+  --soaphe-amber-100: #F4E7D3;
+  --soaphe-amber-500: #B8834D;
+  --soaphe-amber-700: #83572A;
+  
+  --soaphe-white-1000: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', -apple-system, sans-serif;
+  background-color: var(--soaphe-ivory-50);
+  color: var(--soaphe-brown-900);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 32px 36px 32px;
+  width: 1152px;
+  min-height: 100px;
+}
+
+.guide-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.guide-header {
+  margin-bottom: 24px;
+}
+
+.guide-title {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--soaphe-brown-900);
+  letter-spacing: -0.4px;
+  margin-bottom: 8px;
+}
+
+.guide-desc {
+  font-size: 14.5px;
+  color: var(--soaphe-taupe-700);
+  line-height: 1.55;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.guide-meta {
+  font-size: 12.5px;
+  color: var(--soaphe-olive-500);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.canvas-board {
+  background: var(--soaphe-ivory-100);
+  border: 1px solid var(--soaphe-cream-200);
+  border-radius: 18px;
+  padding: 32px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--soaphe-taupe-700);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.serif-font {
+  font-family: 'Noto Serif KR', 'Cormorant Garamond', Georgia, serif;
+}
+
+.mono-font {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Texture Placeholder styling */
+.ceramic-texture {
+  background: radial-gradient(circle at 40% 35%, #FFFFFF 0%, #F4F0E8 55%, #EAE2D5 100%);
+  border: 1px solid var(--soaphe-cream-200);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.ceramic-texture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#8D8074 0.75px, transparent 0.75px);
+  background-size: 16px 16px;
+  opacity: 0.08;
+}
+
+body {
+  width: 1280px;
+  padding: 52px 64px;
+}
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+  margin-top: 16px;
+}
+.step-card {
+  background: var(--soaphe-white-1000);
+  border: 1px solid var(--soaphe-cream-200);
+  border-radius: 18px;
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 250px;
+}
+.step-top {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.step-num {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--soaphe-olive-500);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.5px;
+}
+.step-title {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--soaphe-brown-900);
+}
+.step-desc {
+  font-size: 13.5px;
+  color: var(--soaphe-taupe-700);
+  line-height: 1.65;
+  font-weight: 400;
+}
+.step-principle {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--soaphe-amber-500);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-top: 1px dashed var(--soaphe-cream-200);
+  padding-top: 14px;
+}
+</style>
+</head>
+<body>
+  <div class="guide-page">
+    <div class="guide-header">
+      <div class="guide-title">Getting Started</div>
+      <div class="guide-desc">브랜드 토큰을 먼저 선택하고, 제품 중심 컴포넌트를 조합한 뒤, 공간과 사용 맥락이 드러나는 화면을 완성합니다.</div>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-top">
+          <div class="step-num">01</div>
+          <div class="step-title">Foundations 선택</div>
+          <div class="step-desc">컬러·타이포·간격·이미지 원칙을 먼저 적용합니다. 모든 화면은 의미 기반 토큰을 사용합니다.</div>
+        </div>
+        <div class="step-principle">One key message</div>
+      </div>
+      <div class="step-card">
+        <div class="step-top">
+          <div class="step-num">02</div>
+          <div class="step-title">Components 조합</div>
+          <div class="step-desc">Button·Badge·Product Option·Product Card를 조합하고 Variants로 상태를 전환합니다.</div>
+        </div>
+        <div class="step-principle">Product first</div>
+      </div>
+      <div class="step-card">
+        <div class="step-top">
+          <div class="step-num">03</div>
+          <div class="step-title">Product Experience 완성</div>
+          <div class="step-desc">제품·공간·크기·두 번째 쓰임이 분명하게 전달되도록 Desktop·Tablet·Mobile 화면에 적용합니다.</div>
+        </div>
+        <div class="step-principle">Space & scale</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

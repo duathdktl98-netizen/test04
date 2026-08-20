@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Noto+Serif+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --soaphe-ivory-50: #FAF8F3;
+  --soaphe-ivory-100: #F4F0E8;
+  --soaphe-cream-200: #EAE2D5;
+  --soaphe-beige-300: #D7C7B5;
+  
+  --soaphe-taupe-300: #B5A89B;
+  --soaphe-taupe-500: #8D8074;
+  --soaphe-taupe-700: #63574C;
+  
+  --soaphe-brown-500: #7B685B;
+  --soaphe-brown-700: #51433A;
+  --soaphe-brown-900: #2C2521;
+  
+  --soaphe-olive-100: #E8EADF;
+  --soaphe-olive-500: #777B5D;
+  --soaphe-olive-700: #4E5239;
+  
+  --soaphe-rose-100: #F1E2DF;
+  --soaphe-rose-500: #B77970;
+  --soaphe-rose-700: #844D45;
+  
+  --soaphe-amber-100: #F4E7D3;
+  --soaphe-amber-500: #B8834D;
+  --soaphe-amber-700: #83572A;
+  
+  --soaphe-white-1000: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', -apple-system, sans-serif;
+  background-color: var(--soaphe-ivory-50);
+  color: var(--soaphe-brown-900);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 32px 36px 32px;
+  width: 1152px;
+  min-height: 100px;
+}
+
+.guide-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.guide-header {
+  margin-bottom: 24px;
+}
+
+.guide-title {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--soaphe-brown-900);
+  letter-spacing: -0.4px;
+  margin-bottom: 8px;
+}
+
+.guide-desc {
+  font-size: 14.5px;
+  color: var(--soaphe-taupe-700);
+  line-height: 1.55;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.guide-meta {
+  font-size: 12.5px;
+  color: var(--soaphe-olive-500);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.canvas-board {
+  background: var(--soaphe-ivory-100);
+  border: 1px solid var(--soaphe-cream-200);
+  border-radius: 18px;
+  padding: 32px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--soaphe-taupe-700);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.serif-font {
+  font-family: 'Noto Serif KR', 'Cormorant Garamond', Georgia, serif;
+}
+
+.mono-font {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Texture Placeholder styling */
+.ceramic-texture {
+  background: radial-gradient(circle at 40% 35%, #FFFFFF 0%, #F4F0E8 55%, #EAE2D5 100%);
+  border: 1px solid var(--soaphe-cream-200);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.ceramic-texture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#8D8074 0.75px, transparent 0.75px);
+  background-size: 16px 16px;
+  opacity: 0.08;
+}
+
+.nav-section {
+  background: var(--soaphe-white-1000);
+  border: 1px solid var(--soaphe-cream-200);
+  border-radius: 14px;
+  padding: 16px 24px;
+  width: 100%;
+}
+.header-mock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.nav-link {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--soaphe-taupe-700);
+  text-decoration: none;
+}
+.nav-link.active {
+  font-weight: 700;
+  color: var(--soaphe-brown-900);
+  border-bottom: 2px solid var(--soaphe-brown-900);
+  padding-bottom: 2px;
+}
+.dropdown-mock {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  background: var(--soaphe-ivory-50);
+  border: 1px solid var(--soaphe-cream-200);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 12px;
+}
+.mobile-mock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--soaphe-white-1000);
+  border: 1px solid var(--soaphe-cream-200);
+  border-radius: 10px;
+  padding: 12px 18px;
+}
+.tab-row {
+  display: flex;
+  gap: 8px;
+}
+.tab-btn {
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 600;
+  border: 1px solid var(--soaphe-cream-200);
+  background: var(--soaphe-white-1000);
+  color: var(--soaphe-taupe-700);
+}
+.tab-btn.active {
+  background: var(--soaphe-brown-900);
+  color: var(--soaphe-ivory-50);
+  border-color: var(--soaphe-brown-900);
+}
+</style>
+</head>
+<body>
+  <div class="guide-page">
+    <div class="guide-header">
+      <div class="guide-title">Navigation</div>
+      <div class="guide-desc">브랜드와 제품 탐색 경로를 단순하게 유지하고 Desktop과 Mobile에서 동일한 정보 구조를 제공합니다.</div>
+      <div class="guide-meta">VARIANTS Device / State / Theme · PROPERTY Logo / Menu / Utility / Badge · ACCESSIBILITY Keyboard focus</div>
+    </div>
+
+    <div class="canvas-board" style="gap: 18px;">
+      <!-- Desktop Header -->
+      <div class="section-label">1. Desktop Header & GNB (Default / Hover / Scrolled)</div>
+      <div class="nav-section">
+        <div class="header-mock">
+          <div class="serif-font" style="font-size: 20px; font-weight: 700; color: #2C2521; letter-spacing: 1.5px;">SOAPHE</div>
+          <div class="nav-links">
+            <a href="#" class="nav-link active">Shop</a>
+            <a href="#" class="nav-link">Story</a>
+            <a href="#" class="nav-link">Space</a>
+            <a href="#" class="nav-link">Journal</a>
+          </div>
+          <div style="display: flex; gap: 14px; align-items: center;">
+            <span style="font-size: 13px; color: #63574C;">Search 🔍</span>
+            <span style="font-size: 12px; font-weight: 700; background: #2C2521; color: white; padding: 3px 8px; border-radius: 999px;">Cart 2</span>
+          </div>
+        </div>
+
+        <!-- Dropdown Menu -->
+        <div class="dropdown-mock">
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; font-size: 13px;">
+            <div><b style="color: #2C2521;">All Products</b><div style="font-size: 11.5px; color: #8D8074;">전체 25종 공예 컬렉션</div></div>
+            <div><b style="color: #2C2521;">Soap & Object Set</b><div style="font-size: 11.5px; color: #8D8074;">비누와 트레이 세트 8종</div></div>
+            <div><b style="color: #2C2521;">Scent Line</b><div style="font-size: 11.5px; color: #8D8074;">휴식 · 리프레시 · 행복</div></div>
+            <div><b style="color: #2C2521;">Gift Package</b><div style="font-size: 11.5px; color: #8D8074;">코튼 띠지 정성 패키지</div></div>
+          </div>
+          <div class="ceramic-texture" style="border-radius: 8px; height: 70px;">
+            <span style="font-size: 10.5px; font-weight: 700; color: #63574C;">New Collection Banner</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile & Local Navigation -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div>
+          <div class="section-label">2. Mobile Header (44px Touch Target)</div>
+          <div class="mobile-mock">
+            <span style="font-size: 18px; cursor: pointer;">☰</span>
+            <div class="serif-font" style="font-size: 16px; font-weight: 700; color: #2C2521;">SOAPHE</div>
+            <span style="font-size: 12px; font-weight: 700; background: #2C2521; color: white; padding: 2px 7px; border-radius: 999px;">2</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-label">3. Local Navigation (Tabs & Breadcrumb)</div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div class="tab-row">
+              <button class="tab-btn active">전체</button>
+              <button class="tab-btn">세트 (8)</button>
+              <button class="tab-btn">비누 (9)</button>
+              <button class="tab-btn">오브제 (8)</button>
+            </div>
+            <div style="font-size: 11.5px; color: #8D8074; font-family: 'JetBrains Mono', monospace;">
+              Home > Shop > Soap & Object Set (01 / 04)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

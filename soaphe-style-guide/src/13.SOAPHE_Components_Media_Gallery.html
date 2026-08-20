@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Noto+Serif+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --soaphe-ivory-50: #FAF8F3;
+  --soaphe-ivory-100: #F4F0E8;
+  --soaphe-cream-200: #EAE2D5;
+  --soaphe-beige-300: #D7C7B5;
+  
+  --soaphe-taupe-300: #B5A89B;
+  --soaphe-taupe-500: #8D8074;
+  --soaphe-taupe-700: #63574C;
+  
+  --soaphe-brown-500: #7B685B;
+  --soaphe-brown-700: #51433A;
+  --soaphe-brown-900: #2C2521;
+  
+  --soaphe-olive-100: #E8EADF;
+  --soaphe-olive-500: #777B5D;
+  --soaphe-olive-700: #4E5239;
+  
+  --soaphe-rose-100: #F1E2DF;
+  --soaphe-rose-500: #B77970;
+  --soaphe-rose-700: #844D45;
+  
+  --soaphe-amber-100: #F4E7D3;
+  --soaphe-amber-500: #B8834D;
+  --soaphe-amber-700: #83572A;
+  
+  --soaphe-white-1000: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', -apple-system, sans-serif;
+  background-color: var(--soaphe-ivory-50);
+  color: var(--soaphe-brown-900);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 32px 36px 32px;
+  width: 1152px;
+  min-height: 100px;
+}
+
+.guide-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.guide-header {
+  margin-bottom: 24px;
+}
+
+.guide-title {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--soaphe-brown-900);
+  letter-spacing: -0.4px;
+  margin-bottom: 8px;
+}
+
+.guide-desc {
+  font-size: 14.5px;
+  color: var(--soaphe-taupe-700);
+  line-height: 1.55;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.guide-meta {
+  font-size: 12.5px;
+  color: var(--soaphe-olive-500);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.canvas-board {
+  background: var(--soaphe-ivory-100);
+  border: 1px solid var(--soaphe-cream-200);
+  border-radius: 18px;
+  padding: 32px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--soaphe-taupe-700);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.serif-font {
+  font-family: 'Noto Serif KR', 'Cormorant Garamond', Georgia, serif;
+}
+
+.mono-font {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Texture Placeholder styling */
+.ceramic-texture {
+  background: radial-gradient(circle at 40% 35%, #FFFFFF 0%, #F4F0E8 55%, #EAE2D5 100%);
+  border: 1px solid var(--soaphe-cream-200);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.ceramic-texture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#8D8074 0.75px, transparent 0.75px);
+  background-size: 16px 16px;
+  opacity: 0.08;
+}
+
+.gallery-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  width: 100%;
+}
+.main-viewer {
+  background: var(--soaphe-white-1000);
+  border: 1px solid var(--soaphe-cream-200);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.viewer-display {
+  height: 320px;
+  width: 100%;
+}
+.viewer-footer {
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--soaphe-cream-200);
+}
+.thumb-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+.thumb-box {
+  height: 64px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.thumb-box.active {
+  border: 2px solid var(--soaphe-brown-900);
+}
+.cat-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.cat-tab {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid var(--soaphe-cream-200);
+  background: var(--soaphe-white-1000);
+  color: var(--soaphe-taupe-700);
+}
+.cat-tab.active {
+  background: var(--soaphe-brown-900);
+  color: var(--soaphe-ivory-50);
+  border-color: var(--soaphe-brown-900);
+}
+.ctrl-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--soaphe-cream-200);
+  background: var(--soaphe-white-1000);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+  <div class="guide-page">
+    <div class="guide-header">
+      <div class="guide-title">Media Gallery</div>
+      <div class="guide-desc">제품 단독·공간 연출·크기 비교·두 번째 쓰임 이미지를 분류하여 사용자가 제품을 구체적으로 판단하도록 돕습니다.</div>
+      <div class="guide-meta">VARIANTS Device / Layout / State · PROPERTY Media / Thumbnail / Category / Caption / Control</div>
+    </div>
+
+    <div class="canvas-board" style="padding: 24px 28px;">
+      <!-- Category Tabs -->
+      <div class="cat-tabs">
+        <button class="cat-tab active">제품 단독</button>
+        <button class="cat-tab">밝은 공간</button>
+        <button class="cat-tab">어두운 공간</button>
+        <button class="cat-tab">실제 크기</button>
+        <button class="cat-tab">두 번째 쓰임</button>
+      </div>
+
+      <div class="gallery-layout">
+        <!-- Desktop Main Viewer -->
+        <div>
+          <div class="main-viewer">
+            <div class="viewer-display ceramic-texture">
+              <span style="font-size: 40px; opacity: 0.8;">🧼</span>
+              <b style="font-size: 13px; color: #51433A; margin-top: 8px;">FORM S-01 시그니처 세트 대표 화보</b>
+              <span style="font-size: 11px; color: #8D8074;">자연광이 은은하게 비치는 세면대 위 정물</span>
+            </div>
+            <div class="viewer-footer">
+              <div style="font-size: 12.5px; color: #51433A; font-weight: 500;">
+                자연 건조 저온 숙성 비누와 천연 화강석 트레이
+              </div>
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <span class="mono-font" style="font-size: 12px; font-weight: 700; color: #8D8074;">01 / 06</span>
+                <button class="ctrl-btn">‹</button>
+                <button class="ctrl-btn">›</button>
+                <button class="ctrl-btn">⛶</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Thumbnails -->
+          <div class="thumb-grid">
+            <div class="thumb-box ceramic-texture active"><span style="font-size: 10px; font-weight: 700;">대표</span></div>
+            <div class="thumb-box ceramic-texture"><span style="font-size: 10px; font-weight: 700;">질감</span></div>
+            <div class="thumb-box ceramic-texture"><span style="font-size: 10px; font-weight: 700;">공간</span></div>
+            <div class="thumb-box ceramic-texture"><span style="font-size: 10px; font-weight: 700;">트레이</span></div>
+          </div>
+        </div>
+
+        <!-- Mobile Gallery Mock -->
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div class="section-label">Mobile Single Swipe Spec</div>
+          <div class="main-viewer" style="height: 380px;">
+            <div class="viewer-display ceramic-texture" style="height: 280px;">
+              <span style="font-size: 32px; opacity: 0.8;">📱</span>
+              <span style="font-size: 11.5px; font-weight: 700; color: #51433A; margin-top: 6px;">Swipe Carousel</span>
+            </div>
+            <div style="padding: 12px; display: flex; flex-direction: column; align-items: center; gap: 6px;">
+              <div style="display: flex; gap: 4px;">
+                <div style="width: 16px; height: 4px; border-radius: 2px; background: #2C2521;"></div>
+                <div style="width: 4px; height: 4px; border-radius: 2px; background: #D7C7B5;"></div>
+                <div style="width: 4px; height: 4px; border-radius: 2px; background: #D7C7B5;"></div>
+              </div>
+              <span style="font-size: 11px; color: #8D8074;">좌우 스와이프로 6개 시점 탐색</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

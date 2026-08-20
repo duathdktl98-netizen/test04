@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Noto+Serif+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --soaphe-ivory-50: #FAF8F3;
+  --soaphe-ivory-100: #F4F0E8;
+  --soaphe-cream-200: #EAE2D5;
+  --soaphe-beige-300: #D7C7B5;
+  
+  --soaphe-taupe-300: #B5A89B;
+  --soaphe-taupe-500: #8D8074;
+  --soaphe-taupe-700: #63574C;
+  
+  --soaphe-brown-500: #7B685B;
+  --soaphe-brown-700: #51433A;
+  --soaphe-brown-900: #2C2521;
+  
+  --soaphe-olive-100: #E8EADF;
+  --soaphe-olive-500: #777B5D;
+  --soaphe-olive-700: #4E5239;
+  
+  --soaphe-rose-100: #F1E2DF;
+  --soaphe-rose-500: #B77970;
+  --soaphe-rose-700: #844D45;
+  
+  --soaphe-amber-100: #F4E7D3;
+  --soaphe-amber-500: #B8834D;
+  --soaphe-amber-700: #83572A;
+  
+  --soaphe-white-1000: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', -apple-system, sans-serif;
+  background-color: var(--soaphe-ivory-50);
+  color: var(--soaphe-brown-900);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 32px 36px 32px;
+  width: 1152px;
+  min-height: 100px;
+}
+
+.guide-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.guide-header {
+  margin-bottom: 24px;
+}
+
+.guide-title {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--soaphe-brown-900);
+  letter-spacing: -0.4px;
+  margin-bottom: 8px;
+}
+
+.guide-desc {
+  font-size: 14.5px;
+  color: var(--soaphe-taupe-700);
+  line-height: 1.55;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.guide-meta {
+  font-size: 12.5px;
+  color: var(--soaphe-olive-500);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.canvas-board {
+  background: var(--soaphe-ivory-100);
+  border: 1px solid var(--soaphe-cream-200);
+  border-radius: 18px;
+  padding: 32px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--soaphe-taupe-700);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.serif-font {
+  font-family: 'Noto Serif KR', 'Cormorant Garamond', Georgia, serif;
+}
+
+.mono-font {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Texture Placeholder styling */
+.ceramic-texture {
+  background: radial-gradient(circle at 40% 35%, #FFFFFF 0%, #F4F0E8 55%, #EAE2D5 100%);
+  border: 1px solid var(--soaphe-cream-200);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.ceramic-texture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#8D8074 0.75px, transparent 0.75px);
+  background-size: 16px 16px;
+  opacity: 0.08;
+}
+
+.typo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+.typo-row {
+  background: var(--soaphe-white-1000);
+  border: 1px solid var(--soaphe-cream-200);
+  border-radius: 12px;
+  padding: 18px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.typo-meta {
+  font-size: 11.5px;
+  color: var(--soaphe-taupe-500);
+  font-family: 'JetBrains Mono', monospace;
+}
+</style>
+</head>
+<body>
+  <div class="guide-page">
+    <div class="guide-header">
+      <div class="guide-title">Typography</div>
+      <div class="guide-desc">브랜드 메시지는 절제된 세리프로 감성을 전달하고, 제품 정보와 인터페이스는 가독성이 높은 산세리프로 구성합니다.</div>
+      <div class="guide-meta">SERIF DISPLAY & HEADINGS · SANS BODY & INTERFACE SCALE</div>
+    </div>
+
+    <div class="typo-list">
+      <div class="typo-row">
+        <div class="serif-font" style="font-size: 56px; font-weight: 600; line-height: 68px; color: #2C2521;">오래 남는 온기를 선물합니다.</div>
+        <div class="typo-meta">SOAPHE/Typography/Display/Large · Noto Serif KR Medium · 56px · 68px · -0.02em</div>
+      </div>
+
+      <div class="typo-row">
+        <div class="serif-font" style="font-size: 40px; font-weight: 600; line-height: 52px; color: #2C2521;">오래 남는 온기를 선물합니다.</div>
+        <div class="typo-meta">SOAPHE/Typography/Heading/1 · Noto Serif KR Medium · 40px · 52px · -0.01em</div>
+      </div>
+
+      <div class="typo-row">
+        <div class="serif-font" style="font-size: 32px; font-weight: 600; line-height: 44px; color: #2C2521;">오래 남는 온기를 선물합니다.</div>
+        <div class="typo-meta">SOAPHE/Typography/Heading/2 · Noto Serif KR Medium · 32px · 44px · 0em</div>
+      </div>
+
+      <div class="typo-row">
+        <div style="font-size: 24px; font-weight: 700; line-height: 34px; color: #2C2521;">머무름을 담은 오브제가 일상에 조용한 온기를 더합니다.</div>
+        <div class="typo-meta">SOAPHE/Typography/Heading/3 · Noto Sans KR Medium · 24px · 34px · 0em</div>
+      </div>
+
+      <div class="typo-row">
+        <div style="font-size: 20px; font-weight: 600; line-height: 30px; color: #2C2521;">머무름을 담은 오브제가 일상에 조용한 온기를 더합니다.</div>
+        <div class="typo-meta">SOAPHE/Typography/Title/Large · Noto Sans KR Medium · 20px · 30px · 0em</div>
+      </div>
+
+      <div class="typo-row">
+        <div style="font-size: 18px; font-weight: 600; line-height: 28px; color: #2C2521;">머무름을 담은 오브제가 일상에 조용한 온기를 더합니다.</div>
+        <div class="typo-meta">SOAPHE/Typography/Title/Medium · Noto Sans KR Medium · 18px · 28px · 0em</div>
+      </div>
+
+      <div class="typo-row">
+        <div style="font-size: 17px; font-weight: 400; line-height: 28px; color: #51433A;">머무름을 담은 오브제가 일상에 조용한 온기를 더합니다.</div>
+        <div class="typo-meta">SOAPHE/Typography/Body/Large · Noto Sans KR Regular · 17px · 28px · 0em</div>
+      </div>
+
+      <div class="typo-row">
+        <div style="font-size: 15px; font-weight: 400; line-height: 24px; color: #51433A;">머무름을 담은 오브제가 일상에 조용한 온기를 더합니다.</div>
+        <div class="typo-meta">SOAPHE/Typography/Body/Medium · Noto Sans KR Regular · 15px · 24px · 0em</div>
+      </div>
+
+      <div class="typo-row">
+        <div style="font-size: 13px; font-weight: 400; line-height: 20px; color: #63574C;">머무름을 담은 오브제가 일상에 조용한 온기를 더합니다.</div>
+        <div class="typo-meta">SOAPHE/Typography/Body/Small · Noto Sans KR Regular · 13px · 20px · 0em</div>
+      </div>
+
+      <div class="typo-row">
+        <div style="font-size: 14px; font-weight: 600; line-height: 20px; color: #2C2521;">공간별로 보기 · Warm object for everyday rituals</div>
+        <div class="typo-meta">SOAPHE/Typography/Label/Large · Noto Sans KR Medium · 14px · 20px · 0.02em</div>
+      </div>
+
+      <div class="typo-row">
+        <div style="font-size: 12px; font-weight: 600; line-height: 18px; color: #63574C;">공간별로 보기 · Warm object for everyday rituals</div>
+        <div class="typo-meta">SOAPHE/Typography/Label/Medium · Noto Sans KR Medium · 12px · 18px · 0.02em</div>
+      </div>
+
+      <div class="typo-row">
+        <div style="font-size: 11px; font-weight: 400; line-height: 16px; color: #8D8074;">공간별로 보기 · Warm object for everyday rituals</div>
+        <div class="typo-meta">SOAPHE/Typography/Caption · Noto Sans KR Regular · 11px · 16px · 0.04em</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

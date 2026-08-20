@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Noto+Serif+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --soaphe-ivory-50: #FAF8F3;
+  --soaphe-ivory-100: #F4F0E8;
+  --soaphe-cream-200: #EAE2D5;
+  --soaphe-beige-300: #D7C7B5;
+  
+  --soaphe-taupe-300: #B5A89B;
+  --soaphe-taupe-500: #8D8074;
+  --soaphe-taupe-700: #63574C;
+  
+  --soaphe-brown-500: #7B685B;
+  --soaphe-brown-700: #51433A;
+  --soaphe-brown-900: #2C2521;
+  
+  --soaphe-olive-100: #E8EADF;
+  --soaphe-olive-500: #777B5D;
+  --soaphe-olive-700: #4E5239;
+  
+  --soaphe-rose-100: #F1E2DF;
+  --soaphe-rose-500: #B77970;
+  --soaphe-rose-700: #844D45;
+  
+  --soaphe-amber-100: #F4E7D3;
+  --soaphe-amber-500: #B8834D;
+  --soaphe-amber-700: #83572A;
+  
+  --soaphe-white-1000: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', -apple-system, sans-serif;
+  background-color: var(--soaphe-ivory-50);
+  color: var(--soaphe-brown-900);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 32px 36px 32px;
+  width: 1152px;
+  min-height: 100px;
+}
+
+.guide-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.guide-header {
+  margin-bottom: 24px;
+}
+
+.guide-title {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--soaphe-brown-900);
+  letter-spacing: -0.4px;
+  margin-bottom: 8px;
+}
+
+.guide-desc {
+  font-size: 14.5px;
+  color: var(--soaphe-taupe-700);
+  line-height: 1.55;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.guide-meta {
+  font-size: 12.5px;
+  color: var(--soaphe-olive-500);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.canvas-board {
+  background: var(--soaphe-ivory-100);
+  border: 1px solid var(--soaphe-cream-200);
+  border-radius: 18px;
+  padding: 32px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--soaphe-taupe-700);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.serif-font {
+  font-family: 'Noto Serif KR', 'Cormorant Garamond', Georgia, serif;
+}
+
+.mono-font {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Texture Placeholder styling */
+.ceramic-texture {
+  background: radial-gradient(circle at 40% 35%, #FFFFFF 0%, #F4F0E8 55%, #EAE2D5 100%);
+  border: 1px solid var(--soaphe-cream-200);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.ceramic-texture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#8D8074 0.75px, transparent 0.75px);
+  background-size: 16px 16px;
+  opacity: 0.08;
+}
+
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.img-card {
+  background: var(--soaphe-white-1000);
+  border: 1px solid var(--soaphe-cream-200);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.img-holder {
+  height: 180px;
+  width: 100%;
+}
+.img-caption {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.good-avoid-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.ga-card {
+  background: var(--soaphe-white-1000);
+  border-radius: 14px;
+  padding: 20px 24px;
+  border: 1px solid var(--soaphe-cream-200);
+}
+.ga-list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--soaphe-taupe-700);
+  padding-left: 18px;
+}
+</style>
+</head>
+<body>
+  <div class="guide-page">
+    <div class="guide-header">
+      <div class="guide-title">Image Direction</div>
+      <div class="guide-desc">제품의 아름다움뿐 아니라 조도·공간·실제 크기·두 번째 쓰임까지 사용자가 판단할 수 있는 이미지를 선택합니다.</div>
+      <div class="guide-meta">CATEGORIES Product / Light / Space / Scale / Secondary Use · RATIO 1:1 / 4:5 / 3:2 / 16:9</div>
+    </div>
+
+    <div class="canvas-board">
+      <div class="section-label">6 Image Categories (Texture & Scale Placeholders)</div>
+      <div class="img-grid">
+        <!-- 1. Product Only -->
+        <div class="img-card">
+          <div class="img-holder ceramic-texture">
+            <div style="font-size: 32px; opacity: 0.7;">🧼</div>
+            <div style="font-size: 11px; font-weight: 700; color: #63574C; margin-top: 6px;">[1:1 Product Only]</div>
+          </div>
+          <div class="img-caption">
+            <b style="font-size: 13.5px; color: #2C2521;">1. Product Only</b>
+            <span style="font-size: 12px; color: #8D8074;">제품 단독, 단정한 배경의 단색 정물 컷</span>
+          </div>
+        </div>
+
+        <!-- 2. Texture Detail -->
+        <div class="img-card">
+          <div class="img-holder ceramic-texture" style="background: radial-gradient(circle at 50% 50%, #FAF8F3 0%, #D7C7B5 100%);">
+            <div style="font-size: 32px; opacity: 0.7;">🔍</div>
+            <div style="font-size: 11px; font-weight: 700; color: #63574C; margin-top: 6px;">[4:5 Texture Detail]</div>
+          </div>
+          <div class="img-caption">
+            <b style="font-size: 13.5px; color: #2C2521;">2. Texture Detail</b>
+            <span style="font-size: 12px; color: #8D8074;">숙성 비누 표면과 세라믹 공예 질감 확대</span>
+          </div>
+        </div>
+
+        <!-- 3. Bright Bathroom -->
+        <div class="img-card">
+          <div class="img-holder ceramic-texture" style="background: radial-gradient(circle at 60% 30%, #FFFFFF 0%, #E8EADF 100%);">
+            <div style="font-size: 32px; opacity: 0.7;">☀️</div>
+            <div style="font-size: 11px; font-weight: 700; color: #63574C; margin-top: 6px;">[3:2 Bright Bathroom]</div>
+          </div>
+          <div class="img-caption">
+            <b style="font-size: 13.5px; color: #2C2521;">3. Bright Bathroom</b>
+            <span style="font-size: 12px; color: #8D8074;">5000K 자연광이 드는 화이트 타일 세면대</span>
+          </div>
+        </div>
+
+        <!-- 4. Warm Bathroom -->
+        <div class="img-card">
+          <div class="img-holder ceramic-texture" style="background: radial-gradient(circle at 40% 60%, #EAE2D5 0%, #7B685B 100%); color: white;">
+            <div style="font-size: 32px; opacity: 0.8;">🕯️</div>
+            <div style="font-size: 11px; font-weight: 700; color: #FAF8F3; margin-top: 6px;">[3:2 Warm Bathroom]</div>
+          </div>
+          <div class="img-caption">
+            <b style="font-size: 13.5px; color: #2C2521;">4. Warm Bathroom</b>
+            <span style="font-size: 12px; color: #8D8074;">2700K 간접조명과 어두운 스톤 타일 연출</span>
+          </div>
+        </div>
+
+        <!-- 5. Scale Reference -->
+        <div class="img-card">
+          <div class="img-holder ceramic-texture" style="background: radial-gradient(circle at 50% 50%, #F4F0E8 0%, #B5A89B 100%);">
+            <div style="font-size: 32px; opacity: 0.7;">🖐️</div>
+            <div style="font-size: 11px; font-weight: 700; color: #2C2521; margin-top: 6px;">[4:5 Scale Reference]</div>
+          </div>
+          <div class="img-caption">
+            <b style="font-size: 13.5px; color: #2C2521;">5. Scale Reference</b>
+            <span style="font-size: 12px; color: #8D8074;">손과 일상 사물(70mm / 140mm) 크기 비교</span>
+          </div>
+        </div>
+
+        <!-- 6. Secondary Use -->
+        <div class="img-card">
+          <div class="img-holder ceramic-texture" style="background: radial-gradient(circle at 30% 40%, #FAF8F3 0%, #EAE2D5 100%);">
+            <div style="font-size: 32px; opacity: 0.7;">🗝️</div>
+            <div style="font-size: 11px; font-weight: 700; color: #63574C; margin-top: 6px;">[16:9 Secondary Use]</div>
+          </div>
+          <div class="img-caption">
+            <b style="font-size: 13.5px; color: #2C2521;">6. Secondary Use</b>
+            <span style="font-size: 12px; color: #8D8074;">비누 소진 후 데스크 트레이로 재사용된 모습</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="good-avoid-grid">
+        <div class="ga-card" style="border-left: 4px solid var(--soaphe-olive-500);">
+          <b style="font-size: 15px; color: #4E5239;">Good Principle</b>
+          <ul class="ga-list">
+            <li>제품의 실제 크기를 한눈에 판단할 수 있음</li>
+            <li>공간의 조도와 세라믹 재질감이 명확함</li>
+            <li>소품보다 오브제 본연의 형태가 먼저 보임</li>
+            <li>자연스러운 사용 흔적과 따뜻한 질감 전달</li>
+          </ul>
+        </div>
+        <div class="ga-card" style="border-left: 4px solid var(--soaphe-rose-500);">
+          <b style="font-size: 15px; color: #844D45;">Avoid Principle</b>
+          <ul class="ga-list">
+            <li>제품이 화려한 소품 사이에 묻히는 과도한 연출</li>
+            <li>실제 색과 질감이 왜곡되는 강한 색보정 필터</li>
+            <li>크기 기준(스케일)이 없는 단독 컷의 무의미한 반복</li>
+            <li>모든 공간 연출이 단조롭고 비슷한 조도 톤</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

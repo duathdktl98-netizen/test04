@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Noto+Serif+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --soaphe-ivory-50: #FAF8F3;
+  --soaphe-ivory-100: #F4F0E8;
+  --soaphe-cream-200: #EAE2D5;
+  --soaphe-beige-300: #D7C7B5;
+  
+  --soaphe-taupe-300: #B5A89B;
+  --soaphe-taupe-500: #8D8074;
+  --soaphe-taupe-700: #63574C;
+  
+  --soaphe-brown-500: #7B685B;
+  --soaphe-brown-700: #51433A;
+  --soaphe-brown-900: #2C2521;
+  
+  --soaphe-olive-100: #E8EADF;
+  --soaphe-olive-500: #777B5D;
+  --soaphe-olive-700: #4E5239;
+  
+  --soaphe-rose-100: #F1E2DF;
+  --soaphe-rose-500: #B77970;
+  --soaphe-rose-700: #844D45;
+  
+  --soaphe-amber-100: #F4E7D3;
+  --soaphe-amber-500: #B8834D;
+  --soaphe-amber-700: #83572A;
+  
+  --soaphe-white-1000: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', -apple-system, sans-serif;
+  background-color: var(--soaphe-ivory-50);
+  color: var(--soaphe-brown-900);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 32px 36px 32px;
+  width: 1152px;
+  min-height: 100px;
+}
+
+.guide-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.guide-header {
+  margin-bottom: 24px;
+}
+
+.guide-title {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--soaphe-brown-900);
+  letter-spacing: -0.4px;
+  margin-bottom: 8px;
+}
+
+.guide-desc {
+  font-size: 14.5px;
+  color: var(--soaphe-taupe-700);
+  line-height: 1.55;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.guide-meta {
+  font-size: 12.5px;
+  color: var(--soaphe-olive-500);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.canvas-board {
+  background: var(--soaphe-ivory-100);
+  border: 1px solid var(--soaphe-cream-200);
+  border-radius: 18px;
+  padding: 32px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--soaphe-taupe-700);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.serif-font {
+  font-family: 'Noto Serif KR', 'Cormorant Garamond', Georgia, serif;
+}
+
+.mono-font {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Texture Placeholder styling */
+.ceramic-texture {
+  background: radial-gradient(circle at 40% 35%, #FFFFFF 0%, #F4F0E8 55%, #EAE2D5 100%);
+  border: 1px solid var(--soaphe-cream-200);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.ceramic-texture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#8D8074 0.75px, transparent 0.75px);
+  background-size: 16px 16px;
+  opacity: 0.08;
+}
+
+.spacing-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.spacing-row {
+  background: var(--soaphe-white-1000);
+  border: 1px solid var(--soaphe-cream-200);
+  border-radius: 8px;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.spacing-bar {
+  height: 14px;
+  background: var(--soaphe-brown-700);
+  border-radius: 3px;
+}
+.spacing-text {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--soaphe-brown-900);
+  font-family: 'JetBrains Mono', monospace;
+}
+.control-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.control-box {
+  background: var(--soaphe-white-1000);
+  border: 1px solid var(--soaphe-cream-200);
+  border-radius: 12px;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.grid-card {
+  background: var(--soaphe-white-1000);
+  border: 1px solid var(--soaphe-cream-200);
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.section-space-box {
+  background: var(--soaphe-white-1000);
+  border: 1px solid var(--soaphe-cream-200);
+  border-radius: 12px;
+  padding: 18px 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+</style>
+</head>
+<body>
+  <div class="guide-page">
+    <div class="guide-header">
+      <div class="guide-title">Spacing & Grid</div>
+      <div class="guide-desc">8px 기반 간격과 반응형 그리드를 사용해 제품과 이미지 사이에 충분한 호흡을 만들고 화면 밀도를 일관되게 유지합니다.</div>
+      <div class="guide-meta">8PX BASE SPACING · RESPONSIVE GRID · SECTION AIR BREATHING</div>
+    </div>
+
+    <div class="section-label">Spacing scale</div>
+    <div class="spacing-list">
+      <div class="spacing-row"><div class="spacing-bar" style="width: 4px;"></div><span class="spacing-text">spacing/4 · 4px · var(--soaphe-spacing-4)</span></div>
+      <div class="spacing-row"><div class="spacing-bar" style="width: 8px;"></div><span class="spacing-text">spacing/8 · 8px · var(--soaphe-spacing-8)</span></div>
+      <div class="spacing-row"><div class="spacing-bar" style="width: 16px;"></div><span class="spacing-text">spacing/16 · 16px · var(--soaphe-spacing-16)</span></div>
+      <div class="spacing-row"><div class="spacing-bar" style="width: 24px;"></div><span class="spacing-text">spacing/24 · 24px · var(--soaphe-spacing-24)</span></div>
+      <div class="spacing-row"><div class="spacing-bar" style="width: 32px;"></div><span class="spacing-text">spacing/32 · 32px · var(--soaphe-spacing-32)</span></div>
+      <div class="spacing-row"><div class="spacing-bar" style="width: 48px;"></div><span class="spacing-text">spacing/48 · 48px · var(--soaphe-spacing-48)</span></div>
+      <div class="spacing-row"><div class="spacing-bar" style="width: 64px;"></div><span class="spacing-text">spacing/64 · 64px · var(--soaphe-spacing-64)</span></div>
+      <div class="spacing-row"><div class="spacing-bar" style="width: 80px;"></div><span class="spacing-text">spacing/80 · 80px · var(--soaphe-spacing-80)</span></div>
+      <div class="spacing-row"><div class="spacing-bar" style="width: 120px;"></div><span class="spacing-text">spacing/120 · 120px · var(--soaphe-spacing-120)</span></div>
+    </div>
+
+    <div class="section-label">Control & touch size</div>
+    <div class="control-grid">
+      <div class="control-box">
+        <div style="width: 120px; height: 36px; background: #51433A; border-radius: 999px;"></div>
+        <span class="spacing-text" style="font-size: 11.5px;">control/small · 36px</span>
+      </div>
+      <div class="control-box">
+        <div style="width: 120px; height: 44px; background: #51433A; border-radius: 999px;"></div>
+        <span class="spacing-text" style="font-size: 11.5px;">control/medium · 44px</span>
+      </div>
+      <div class="control-box">
+        <div style="width: 120px; height: 52px; background: #51433A; border-radius: 999px;"></div>
+        <span class="spacing-text" style="font-size: 11.5px;">control/large · 52px</span>
+      </div>
+      <div class="control-box">
+        <div style="width: 120px; height: 44px; background: #777B5D; border-radius: 999px;"></div>
+        <span class="spacing-text" style="font-size: 11.5px;">touch/minimum · 44px</span>
+      </div>
+    </div>
+
+    <div class="section-label">Responsive grid</div>
+    <div class="grid-cards">
+      <div class="grid-card">
+        <b style="font-size: 14px; color: #2C2521;">Desktop Grid</b>
+        <span style="font-size: 12.5px; color: #63574C;">12 Columns · Max 1280px<br>Margin 64px · Gutter 24px</span>
+      </div>
+      <div class="grid-card">
+        <b style="font-size: 14px; color: #2C2521;">Tablet Grid</b>
+        <span style="font-size: 12.5px; color: #63574C;">8 Columns · 100% Width<br>Margin 32px · Gutter 20px</span>
+      </div>
+      <div class="grid-card">
+        <b style="font-size: 14px; color: #2C2521;">Mobile Grid</b>
+        <span style="font-size: 12.5px; color: #63574C;">4 Columns · 100% Width<br>Margin 20px · Gutter 16px</span>
+      </div>
+    </div>
+
+    <div class="section-label">Section & card spacing</div>
+    <div class="section-space-box">
+      <div><b style="font-size: 13px; color: #2C2521;">section/desktop</b><div style="font-size: 12px; color: #8D8074; margin-top: 4px;">120 ~ 160px</div></div>
+      <div><b style="font-size: 13px; color: #2C2521;">section/tablet</b><div style="font-size: 12px; color: #8D8074; margin-top: 4px;">96 ~ 120px</div></div>
+      <div><b style="font-size: 13px; color: #2C2521;">section/mobile</b><div style="font-size: 12px; color: #8D8074; margin-top: 4px;">72 ~ 96px</div></div>
+      <div><b style="font-size: 13px; color: #2C2521;">card/padding</b><div style="font-size: 12px; color: #8D8074; margin-top: 4px;">24 ~ 32px</div></div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Noto+Serif+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --soaphe-ivory-50: #FAF8F3;
+  --soaphe-ivory-100: #F4F0E8;
+  --soaphe-cream-200: #EAE2D5;
+  --soaphe-beige-300: #D7C7B5;
+  
+  --soaphe-taupe-300: #B5A89B;
+  --soaphe-taupe-500: #8D8074;
+  --soaphe-taupe-700: #63574C;
+  
+  --soaphe-brown-500: #7B685B;
+  --soaphe-brown-700: #51433A;
+  --soaphe-brown-900: #2C2521;
+  
+  --soaphe-olive-100: #E8EADF;
+  --soaphe-olive-500: #777B5D;
+  --soaphe-olive-700: #4E5239;
+  
+  --soaphe-rose-100: #F1E2DF;
+  --soaphe-rose-500: #B77970;
+  --soaphe-rose-700: #844D45;
+  
+  --soaphe-amber-100: #F4E7D3;
+  --soaphe-amber-500: #B8834D;
+  --soaphe-amber-700: #83572A;
+  
+  --soaphe-white-1000: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', -apple-system, sans-serif;
+  background-color: var(--soaphe-ivory-50);
+  color: var(--soaphe-brown-900);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 32px 36px 32px;
+  width: 1152px;
+  min-height: 100px;
+}
+
+.guide-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.guide-header {
+  margin-bottom: 24px;
+}
+
+.guide-title {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--soaphe-brown-900);
+  letter-spacing: -0.4px;
+  margin-bottom: 8px;
+}
+
+.guide-desc {
+  font-size: 14.5px;
+  color: var(--soaphe-taupe-700);
+  line-height: 1.55;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.guide-meta {
+  font-size: 12.5px;
+  color: var(--soaphe-olive-500);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.canvas-board {
+  background: var(--soaphe-ivory-100);
+  border: 1px solid var(--soaphe-cream-200);
+  border-radius: 18px;
+  padding: 32px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--soaphe-taupe-700);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.serif-font {
+  font-family: 'Noto Serif KR', 'Cormorant Garamond', Georgia, serif;
+}
+
+.mono-font {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Texture Placeholder styling */
+.ceramic-texture {
+  background: radial-gradient(circle at 40% 35%, #FFFFFF 0%, #F4F0E8 55%, #EAE2D5 100%);
+  border: 1px solid var(--soaphe-cream-200);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.ceramic-texture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#8D8074 0.75px, transparent 0.75px);
+  background-size: 16px 16px;
+  opacity: 0.08;
+}
+
+body {
+  background: #2C2521;
+  width: 1280px;
+  height: 720px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.aura-1 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(184, 131, 77, 0.12) 0%, rgba(0,0,0,0) 70%);
+  top: -120px;
+  left: 20%;
+  filter: blur(60px);
+}
+
+.aura-2 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(119, 123, 93, 0.15) 0%, rgba(0,0,0,0) 70%);
+  bottom: -100px;
+  right: 22%;
+  filter: blur(60px);
+}
+
+.cover-container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 860px;
+}
+
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 20px;
+  background: rgba(119, 123, 93, 0.22);
+  border: 1px solid rgba(232, 234, 223, 0.25);
+  border-radius: 9999px;
+  color: #E8EADF;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  margin-bottom: 36px;
+  text-transform: uppercase;
+}
+
+.cover-title {
+  font-family: 'Noto Serif KR', 'Cormorant Garamond', Georgia, serif;
+  font-size: 64px;
+  font-weight: 600;
+  color: #FAF8F3;
+  letter-spacing: 2px;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.cover-title-sub {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  color: #EAE2D5;
+}
+
+.cover-desc {
+  font-size: 16.5px;
+  color: #FAF8F3;
+  font-weight: 400;
+  margin-bottom: 10px;
+  letter-spacing: -0.2px;
+}
+
+.cover-categories {
+  font-size: 14.5px;
+  color: #B5A89B;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 36px;
+}
+
+.cover-divider {
+  width: 440px;
+  height: 1px;
+  background: rgba(215, 199, 181, 0.25);
+  margin-bottom: 32px;
+}
+
+.cover-tags {
+  font-size: 13.5px;
+  color: #D7C7B5;
+  font-weight: 500;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  letter-spacing: 0.3px;
+}
+</style>
+</head>
+<body>
+  <div class="aura-1"></div>
+  <div class="aura-2"></div>
+  <div class="cover-container">
+    <div class="badge-pill">BRAND & WEB STYLE GUIDE · VERSION 1.0</div>
+    <div class="cover-title">SOAPHE</div>
+    <div class="cover-title-sub">Brand & Web Style Guide</div>
+    <div class="cover-desc">오래 남는 온기를 선물하는 오브제 라이프스타일 디자인 시스템</div>
+    <div class="cover-categories">Foundations · Components · Product Experience</div>
+    <div class="cover-divider"></div>
+    <div class="cover-tags">
+      <span>Design Tokens</span>
+      <span>·</span>
+      <span>Responsive Web</span>
+      <span>·</span>
+      <span>Product Story</span>
+      <span>·</span>
+      <span>Accessibility</span>
+    </div>
+  </div>
+</body>
+</html>

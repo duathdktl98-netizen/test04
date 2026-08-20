@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Noto+Serif+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --soaphe-ivory-50: #FAF8F3;
+  --soaphe-ivory-100: #F4F0E8;
+  --soaphe-cream-200: #EAE2D5;
+  --soaphe-beige-300: #D7C7B5;
+  
+  --soaphe-taupe-300: #B5A89B;
+  --soaphe-taupe-500: #8D8074;
+  --soaphe-taupe-700: #63574C;
+  
+  --soaphe-brown-500: #7B685B;
+  --soaphe-brown-700: #51433A;
+  --soaphe-brown-900: #2C2521;
+  
+  --soaphe-olive-100: #E8EADF;
+  --soaphe-olive-500: #777B5D;
+  --soaphe-olive-700: #4E5239;
+  
+  --soaphe-rose-100: #F1E2DF;
+  --soaphe-rose-500: #B77970;
+  --soaphe-rose-700: #844D45;
+  
+  --soaphe-amber-100: #F4E7D3;
+  --soaphe-amber-500: #B8834D;
+  --soaphe-amber-700: #83572A;
+  
+  --soaphe-white-1000: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', -apple-system, sans-serif;
+  background-color: var(--soaphe-ivory-50);
+  color: var(--soaphe-brown-900);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 32px 36px 32px;
+  width: 1152px;
+  min-height: 100px;
+}
+
+.guide-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.guide-header {
+  margin-bottom: 24px;
+}
+
+.guide-title {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--soaphe-brown-900);
+  letter-spacing: -0.4px;
+  margin-bottom: 8px;
+}
+
+.guide-desc {
+  font-size: 14.5px;
+  color: var(--soaphe-taupe-700);
+  line-height: 1.55;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.guide-meta {
+  font-size: 12.5px;
+  color: var(--soaphe-olive-500);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.canvas-board {
+  background: var(--soaphe-ivory-100);
+  border: 1px solid var(--soaphe-cream-200);
+  border-radius: 18px;
+  padding: 32px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--soaphe-taupe-700);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.serif-font {
+  font-family: 'Noto Serif KR', 'Cormorant Garamond', Georgia, serif;
+}
+
+.mono-font {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Texture Placeholder styling */
+.ceramic-texture {
+  background: radial-gradient(circle at 40% 35%, #FFFFFF 0%, #F4F0E8 55%, #EAE2D5 100%);
+  border: 1px solid var(--soaphe-cream-200);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.ceramic-texture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#8D8074 0.75px, transparent 0.75px);
+  background-size: 16px 16px;
+  opacity: 0.08;
+}
+
+.opt-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.opt-card {
+  background: var(--soaphe-white-1000);
+  border-radius: 10px;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1.5px solid var(--soaphe-cream-200);
+  min-height: 56px;
+}
+.opt-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.opt-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid var(--soaphe-taupe-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.opt-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--soaphe-brown-900);
+}
+.opt-price {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--soaphe-brown-700);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Option Types Grid */
+.types-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 14px;
+}
+.type-box {
+  background: var(--soaphe-white-1000);
+  border: 1px solid var(--soaphe-cream-200);
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+</style>
+</head>
+<body>
+  <div class="guide-page">
+    <div class="guide-header">
+      <div class="guide-title">Product Option</div>
+      <div class="guide-desc">향·오브제 색상·세트 구성·선물 포장 선택 상태를 하나의 일관된 컴포넌트 체계로 관리합니다.</div>
+      <div class="guide-meta">PROPERTY Label / Swatch / Thumbnail / Price · VARIANTS Type / State · 최소 높이 56px · Focus 2px</div>
+    </div>
+
+    <div class="canvas-board" style="padding: 24px 30px;">
+      <div class="section-label">State Variants (Default, Hover, Focus, Selected, Disabled, Sold Out)</div>
+      <div class="opt-list">
+        <!-- 1. Default -->
+        <div class="opt-card" style="border-color: #EAE2D5;">
+          <div class="opt-left">
+            <div class="opt-dot"></div>
+            <div class="opt-text">선택지 내용을 입력하세요 (Default 상태)</div>
+          </div>
+          <div class="opt-price">+₩0</div>
+        </div>
+
+        <!-- 2. Hover -->
+        <div class="opt-card" style="border-color: #8D8074; background: #FAF8F3;">
+          <div class="opt-left">
+            <div class="opt-dot" style="border-color: #51433A;"></div>
+            <div class="opt-text">선택지 내용을 입력하세요 (Hover 상태)</div>
+          </div>
+          <div class="opt-price">+₩0</div>
+        </div>
+
+        <!-- 3. Focus -->
+        <div class="opt-card" style="border-color: #51433A; outline: 2px solid #B8834D; outline-offset: 2px;">
+          <div class="opt-left">
+            <div class="opt-dot" style="border-color: #B8834D;"></div>
+            <div class="opt-text">선택지 내용을 입력하세요 (Focus 상태)</div>
+          </div>
+          <div class="opt-price">+₩0</div>
+        </div>
+
+        <!-- 4. Selected -->
+        <div class="opt-card" style="border-color: #51433A; background: #FAF8F3;">
+          <div class="opt-left">
+            <div class="opt-dot" style="border-color: #51433A; background: #51433A;"><span style="color: white; font-size: 11px;">✓</span></div>
+            <div class="opt-text" style="font-weight: 700; color: #2C2521;">휴식 · 차분한 편백 우디 향 (Selected 활성 상태)</div>
+          </div>
+          <div class="opt-price" style="color: #2C2521;">+₩0</div>
+        </div>
+
+        <!-- 5. Disabled -->
+        <div class="opt-card" style="border-color: #EAE2D5; background: #F4F0E8; opacity: 0.65;">
+          <div class="opt-left">
+            <div class="opt-dot" style="border-color: #B5A89B;"></div>
+            <div class="opt-text" style="color: #8D8074;">선물 포장 박스 추가 (Disabled 비활성)</div>
+          </div>
+          <div class="opt-price" style="color: #8D8074;">+₩3,000</div>
+        </div>
+
+        <!-- 6. Sold Out -->
+        <div class="opt-card" style="border-color: #EAE2D5; background: #F4F0E8; opacity: 0.55;">
+          <div class="opt-left">
+            <div class="opt-dot" style="border-color: #B5A89B;"></div>
+            <div class="opt-text" style="color: #8D8074; text-decoration: line-through;">시그니처 화강석 트레이 세트</div>
+            <span style="font-size: 11px; font-weight: 700; color: #844D45; background: #F1E2DF; padding: 2px 6px; border-radius: 4px; margin-left: 6px;">품절</span>
+          </div>
+          <div class="opt-price" style="color: #8D8074;">Sold Out</div>
+        </div>
+      </div>
+
+      <!-- Option Types Row -->
+      <div class="section-label" style="margin-top: 14px;">Option Types Demonstration</div>
+      <div class="types-grid">
+        <div class="type-box">
+          <span style="font-size: 10.5px; font-weight: 700; color: #8D8074;">TEXT OPTION</span>
+          <span style="font-size: 12.5px; font-weight: 600; color: #2C2521;">선물 포장 안 함</span>
+        </div>
+        <div class="type-box">
+          <span style="font-size: 10.5px; font-weight: 700; color: #777B5D;">SCENT OPTION</span>
+          <span style="font-size: 12.5px; font-weight: 600; color: #2C2521;">휴식 · 차분한 우디 향</span>
+        </div>
+        <div class="type-box">
+          <span style="font-size: 10.5px; font-weight: 700; color: #B8834D;">COLOR SWATCH</span>
+          <div style="display: flex; align-items: center; gap: 6px; margin-top: 2px;">
+            <div style="width: 14px; height: 14px; border-radius: 50%; background: #D7C7B5; border: 1px solid #8D8074;"></div>
+            <span style="font-size: 12px; font-weight: 600; color: #2C2521;">Warm Beige</span>
+          </div>
+        </div>
+        <div class="type-box">
+          <span style="font-size: 10.5px; font-weight: 700; color: #8D8074;">THUMBNAIL OPTION</span>
+          <span style="font-size: 12px; font-weight: 600; color: #2C2521;">비누 + 오브제 세트</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Noto+Serif+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --soaphe-ivory-50: #FAF8F3;
+  --soaphe-ivory-100: #F4F0E8;
+  --soaphe-cream-200: #EAE2D5;
+  --soaphe-beige-300: #D7C7B5;
+  
+  --soaphe-taupe-300: #B5A89B;
+  --soaphe-taupe-500: #8D8074;
+  --soaphe-taupe-700: #63574C;
+  
+  --soaphe-brown-500: #7B685B;
+  --soaphe-brown-700: #51433A;
+  --soaphe-brown-900: #2C2521;
+  
+  --soaphe-olive-100: #E8EADF;
+  --soaphe-olive-500: #777B5D;
+  --soaphe-olive-700: #4E5239;
+  
+  --soaphe-rose-100: #F1E2DF;
+  --soaphe-rose-500: #B77970;
+  --soaphe-rose-700: #844D45;
+  
+  --soaphe-amber-100: #F4E7D3;
+  --soaphe-amber-500: #B8834D;
+  --soaphe-amber-700: #83572A;
+  
+  --soaphe-white-1000: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', -apple-system, sans-serif;
+  background-color: var(--soaphe-ivory-50);
+  color: var(--soaphe-brown-900);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 32px 36px 32px;
+  width: 1152px;
+  min-height: 100px;
+}
+
+.guide-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.guide-header {
+  margin-bottom: 24px;
+}
+
+.guide-title {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--soaphe-brown-900);
+  letter-spacing: -0.4px;
+  margin-bottom: 8px;
+}
+
+.guide-desc {
+  font-size: 14.5px;
+  color: var(--soaphe-taupe-700);
+  line-height: 1.55;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.guide-meta {
+  font-size: 12.5px;
+  color: var(--soaphe-olive-500);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.canvas-board {
+  background: var(--soaphe-ivory-100);
+  border: 1px solid var(--soaphe-cream-200);
+  border-radius: 18px;
+  padding: 32px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--soaphe-taupe-700);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.serif-font {
+  font-family: 'Noto Serif KR', 'Cormorant Garamond', Georgia, serif;
+}
+
+.mono-font {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Texture Placeholder styling */
+.ceramic-texture {
+  background: radial-gradient(circle at 40% 35%, #FFFFFF 0%, #F4F0E8 55%, #EAE2D5 100%);
+  border: 1px solid var(--soaphe-cream-200);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.ceramic-texture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#8D8074 0.75px, transparent 0.75px);
+  background-size: 16px 16px;
+  opacity: 0.08;
+}
+
+.card-matrix {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+.p-card {
+  background: var(--soaphe-white-1000);
+  border: 1px solid var(--soaphe-cream-200);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+.p-card-media {
+  width: 100%;
+  height: 220px;
+}
+.p-card-body {
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.p-card-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+.p-card-title {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--soaphe-brown-900);
+}
+.p-card-desc {
+  font-size: 13px;
+  color: var(--soaphe-taupe-700);
+  line-height: 1.5;
+}
+.p-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  border-top: 1px dashed var(--soaphe-cream-200);
+  padding-top: 12px;
+}
+.p-card-price {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--soaphe-brown-900);
+  font-family: 'JetBrains Mono', monospace;
+}
+.p-card-link {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--soaphe-brown-700);
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+  <div class="guide-page">
+    <div class="guide-header">
+      <div class="guide-title">Product Card</div>
+      <div class="guide-desc">상품·공간·브랜드 이야기를 서로 다른 정보 위계로 전달하되 이미지 비율과 텍스트 규칙은 일관되게 유지합니다.</div>
+      <div class="guide-meta">VARIANTS Type / State / Image Ratio · PROPERTY Image / Badge / Title / Body / Price / Action</div>
+    </div>
+
+    <div class="canvas-board" style="background: transparent; border: none; padding: 0;">
+      <div class="card-matrix">
+        <!-- 1. Product -->
+        <div class="p-card">
+          <div class="p-card-media ceramic-texture">
+            <span style="font-size: 11px; font-weight: 700; color: #777B5D; background: #E8EADF; padding: 4px 10px; border-radius: 999px;">🌿 휴식 Scent</span>
+          </div>
+          <div class="p-card-body">
+            <div class="p-card-tag" style="color: #777B5D;">SET ARCHIVE</div>
+            <div class="p-card-title">FORM S-01 시그니처 세트</div>
+            <div class="p-card-desc">4주 저온 숙성 무향 비누와 천연 화강석 아치 트레이 세트</div>
+            <div class="p-card-footer">
+              <div class="p-card-price">₩48,000</div>
+              <a href="#" class="p-card-link">장바구니 담기 →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Product / Sold Out -->
+        <div class="p-card" style="opacity: 0.75;">
+          <div class="p-card-media ceramic-texture" style="background: #EAE2D5;">
+            <span style="font-size: 11px; font-weight: 700; color: #844D45; background: #F1E2DF; padding: 4px 10px; border-radius: 999px;">Sold Out</span>
+          </div>
+          <div class="p-card-body">
+            <div class="p-card-tag" style="color: #8D8074;">LIMITED OBJECT</div>
+            <div class="p-card-title" style="color: #63574C;">FORM O-01 타임리스 플린스</div>
+            <div class="p-card-desc">비누 사용 후 데스크 오브제로 쓰이는 한정판 세라믹 트레이</div>
+            <div class="p-card-footer">
+              <div class="p-card-price" style="color: #8D8074;">품절</div>
+              <span style="font-size: 12px; color: #8D8074;">입고 알림 신청</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Space -->
+        <div class="p-card">
+          <div class="p-card-media ceramic-texture" style="background: radial-gradient(circle at center, #FFFFFF 0%, #E8EADF 100%);">
+            <span style="font-size: 11px; font-weight: 700; color: #4E5239;">3:2 Space Simulation</span>
+          </div>
+          <div class="p-card-body">
+            <div class="p-card-tag" style="color: #777B5D;">IN YOUR ROOM</div>
+            <div class="p-card-title">밝은 욕실 · 5000K 자연광</div>
+            <div class="p-card-desc">화이트 타일과 미니멀한 수전 위에 정갈하게 어우러지는 공예 실측 연출</div>
+            <div class="p-card-footer">
+              <span style="font-size: 12px; color: #8D8074;">오브제 140mm 규격</span>
+              <a href="#" class="p-card-link">이 공간에서 보기 →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Story -->
+        <div class="p-card">
+          <div class="p-card-media ceramic-texture" style="background: radial-gradient(circle at center, #FAF8F3 0%, #D7C7B5 100%);">
+            <span style="font-size: 11px; font-weight: 700; color: #51433A;">4:5 Maker Story</span>
+          </div>
+          <div class="p-card-body">
+            <div class="p-card-tag" style="color: #B8834D;">BRAND ESSAY</div>
+            <div class="p-card-title">사라짐과 머무름의 미학</div>
+            <div class="p-card-desc">비누가 닿는 순간부터 비워진 자리까지, 일상의 쉼을 완성하는 공예 이야기</div>
+            <div class="p-card-footer">
+              <span style="font-size: 12px; color: #8D8074;">소피 저널 01</span>
+              <a href="#" class="p-card-link">이야기 읽기 →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
